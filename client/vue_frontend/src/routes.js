@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Post from "./views/PostPage";
-import Login from "./views/LoginPage";
+import Post from "./views/PostView";
+import Login from "./views/LoginView";
 const routes = [
   {
     path: "/",

@@ -2,7 +2,7 @@
   <div>
     <NavbarComponent class="sticky top-0 z-50" />
     <div class="grid grid-cols-4 gap-10 mr-10 ml-10 mt-5 mb-5">
-      <div v-for="posts in APIData" :key="posts.data">
+      <div v-for="posts in blogData" :key="posts.data">
         <div class="w-fit">
           <div class="rounded-lg shadow-lg bg-white max-w-sm">
             <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
@@ -28,27 +28,33 @@
 </template>
 
 <script>
-import getAPI from "../../axios-api";
 import NavbarComponent from "@/components/NavbarComp.vue";
+
+import getAPI from "../../axios-api";
+import store from "@/stores/store";
 export default {
   name: "PostComp",
-  data() {
-    return {
-      APIData: [],
-    };
-  },
   components: {
     NavbarComponent,
   },
+  data() {
+    return {
+      blogData: store.state.APIData,
+    };
+  },
+
   created() {
     getAPI
-      .get("posts/")
+      .get("/posts/", {
+        headers: {
+          Authorization: `Bearer ${store.state.accessToken}`,
+        },
+      })
       .then((response) => {
-        console.log("Post Api has Recived Data");
-        this.APIData = response.data;
+        store.state.APIData = response.data;
+        this.blogData = store.state.APIData;
       })
       .catch((err) => {
-        console.log("ERROR");
         console.log(err);
       });
   },
