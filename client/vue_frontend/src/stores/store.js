@@ -13,6 +13,10 @@ const store = createStore({
     updateStorage(state, { access, refresh }) {
       (state.accessToken = access), (state.refreshToken = refresh);
     },
+    deleteToken(state) {
+      state.accessToken = "";
+      state.refreshToken = "";
+    },
   },
   getters: {
     loggedIn(state) {
@@ -20,6 +24,11 @@ const store = createStore({
     },
   },
   actions: {
+    userLogout(context) {
+      if (context.getters.loggedIn) {
+        context.commit("deleteToken");
+      }
+    },
     userLogin(context, userCredentials) {
       return new Promise((resolve, reject) => {
         getAPI

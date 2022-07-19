@@ -39,7 +39,7 @@
               <label htmlFor="" class="ml-28 text-lg"> Forgot Password? </label>
             </div>
             <button
-              class="bg-emerald-500 rounded-md w-4/12 h-10 text-2xl mt-5 hover:text-white hover:outline-white hover:shadow-md transition-all duration-100 shadow-lg align-middle outline-black outline"
+              class="bg-emerald-500 rounded-md w-4/12 h-10 text-2xl mt-5 hover:text-white hover:outline-white hover:shadow-md transition-all duration-100 shadow-lg align-middle outline-black outline cursor-pointer"
               type="submit"
             >
               Login
@@ -87,35 +87,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
-
-<!-- <script>
-import { useTokenStore } from "@/stores/authStore";
-const log = useTokenStore();
-export default {
-  name: "LoginComp",
-  data() {
-    return {
-      username: "",
-      password: "",
-      invalidAuth: false,
-    };
-  },
-  methods: {
-    async login() {
-      log
-        .userLogin("userLogin", {
-          username: this.username,
-          password: this.password,
-        })
-        .then(() => {
-          this.$router.push({ name: "post" });
-        })
-        .catch((err) => {
-          console.log(err);
-          this.invalidAuth = true;
-        });
-    },
-  },
-};
-</script> -->
+<style></style>
