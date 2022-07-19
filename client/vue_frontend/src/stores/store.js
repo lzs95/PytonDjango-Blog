@@ -14,6 +14,11 @@ const store = createStore({
       (state.accessToken = access), (state.refreshToken = refresh);
     },
   },
+  getters: {
+    loggedIn(state) {
+      return state.accessToken !== "";
+    },
+  },
   actions: {
     userLogin(context, userCredentials) {
       return new Promise((resolve, reject) => {

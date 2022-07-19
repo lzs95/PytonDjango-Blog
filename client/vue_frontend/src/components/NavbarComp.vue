@@ -8,7 +8,7 @@
       <div class="collapse flex-grow flex-row">
         <ul class="navbar-nav flex flex-row pl-0 list-style-none mr-auto">
           <a class="text-xl text-black mr-7" href="#">My Blog</a>
-          <li class="px-2 text-xl bg-zinc-200">
+          <li class="px-2 text-xl">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="px-2 text-xl">
@@ -20,6 +20,7 @@
           </li>
         </ul>
       </div>
+      <div class="px-2 text-xl">Logout</div>
     </div>
   </nav>
 </template>

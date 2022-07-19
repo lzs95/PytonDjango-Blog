@@ -6,6 +6,9 @@ const routes = [
     path: "/",
     name: "post",
     component: Post,
+    meta: {
+      requiresLogin: true,
+    },
   },
   {
     path: "/login",
