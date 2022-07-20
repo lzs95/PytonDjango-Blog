@@ -28,8 +28,15 @@
       <div
         class="px-2 text-xl text-gray-500 hover:text-gray-700 focus:text-gray-700 cursor-pointer"
         @click="logout"
+        v-if="accessToken !== ''"
       >
         Logout
+      </div>
+      <div
+        class="px-2 text-xl text-gray-500 hover:text-gray-700 focus:text-gray-700 cursor-pointer"
+        v-else
+      >
+        Sign Up
       </div>
     </div>
   </nav>
@@ -37,8 +44,14 @@
 
 <script>
 import store from "@/stores/store";
+
 export default {
   name: "NavbarComponent",
+  data() {
+    return {
+      accessToken: store.state.accessToken,
+    };
+  },
   methods: {
     logout() {
       store

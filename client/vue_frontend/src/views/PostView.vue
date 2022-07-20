@@ -32,6 +32,7 @@ import NavbarComponent from "@/components/NavbarComp.vue";
 
 import getAPI from "../../axios-api";
 import store from "@/stores/store";
+
 export default {
   name: "PostComp",
   components: {

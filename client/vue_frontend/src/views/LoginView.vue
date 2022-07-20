@@ -25,7 +25,7 @@
             />
             <input
               required
-              type="text"
+              type="password"
               class="rounded-md md w-7/12 h-10 text-2xl placeholder:italic placeholder:text-zinc-400 indent-5 mt-10 shadow-md"
               placeholder="password"
               v-model="password"

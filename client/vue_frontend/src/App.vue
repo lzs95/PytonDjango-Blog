@@ -1,6 +1,10 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    class="bg-gradient-to-t from-blue-200 to-slate-300 w-screen h-screen"
+  >
     <router-view />
+    <button class="bg-orange-500 ml-9">Create New Post</button>
   </div>
 </template>
 
@@ -10,10 +14,4 @@ export default {
 };
 </script>
 
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  background-color: bisque;
-}
-</style>
+<style></style>
