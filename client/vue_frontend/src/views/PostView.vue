@@ -25,6 +25,7 @@
       </div>
     </div>
   </div>
+  <button class="bg-orange-500 ml-9">Create New Post</button>
 </template>
 
 <script>
